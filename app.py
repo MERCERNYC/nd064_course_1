@@ -44,6 +44,7 @@ def metrics():
         status=200,
         mimetype='application/json'
     )
+    
     return response
 
 # Return a 200 HTTP JSON response with a message “OK - healthy”
