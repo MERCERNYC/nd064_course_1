@@ -1,0 +1,36 @@
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:15:48] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:15:48] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:15:50] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:16:15] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:16:16] "GET / HTTP/1.1" 200 -
+INFO:app:Healthz request successfull
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:16:20] "GET /healthz HTTP/1.1" 200 -
+INFO:app:Metrics request successfull
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:16:26] "GET /metrics HTTP/1.1" 200 -
+INFO:app:About request successfull
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:17:24] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:17:30] "GET /notfound HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:17:44] "GET /404 HTTP/1.1" 404 -
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:31:55] "GET / HTTP/1.1" 200 -
+INFO:app:About Us request successfull
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:31:58] "GET /about HTTP/1.1" 200 -
+INFO:app:Article created successfull
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:32:00] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:32:08] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:32:08] "GET / HTTP/1.1" 200 -
+INFO:app:Article request successfull
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:32:12] "GET /7 HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:33:32] "GET / HTTP/1.1" 200 -
+INFO:app:Article request successfull
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:33:34] "GET /1 HTTP/1.1" 200 -
+INFO:app:About Us request successfull
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:33:36] "GET /about HTTP/1.1" 200 -
+INFO:app:Article created successfull
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:33:38] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:33:44] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:33:44] "GET / HTTP/1.1" 200 -
+INFO:app:Article does not exist
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 13:33:55] "GET /404 HTTP/1.1" 404 -

@@ -1,4 +1,5 @@
 import sqlite3
+import logging
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
@@ -44,8 +45,8 @@ def metrics():
         status=200,
         mimetype='application/json'
     )
-    
     return response
+    
 
 # Return a 200 HTTP JSON response with a message “OK - healthy”
 @app.route('/healthz')
@@ -76,13 +77,17 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
+      app.logger.info('Article does not exist')
       return render_template('404.html'), 404
     else:
+      app.logger.info('Article request successfull')
       return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
 def about():
+    ## log line
+    app.logger.info('About Us request successfull')
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -102,9 +107,14 @@ def create():
             connection.close()
 
             return redirect(url_for('index'))
-
+            
+    app.logger.info('Article created successfull')
     return render_template('create.html')
 
 # start the application on port 3111
 if __name__ == "__main__":
-   app.run(host='0.0.0.0', port='3111')
+
+    ## stream logs to app.log file
+    logging.basicConfig(filename='app.log',level=logging.DEBUG)
+
+    app.run(host='0.0.0.0', port='3111')
