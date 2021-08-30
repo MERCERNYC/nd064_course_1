@@ -48,7 +48,7 @@ def metrics():
 
 # Return a 200 HTTP JSON response with a message “OK - healthy”
 @app.route('/healthz')
-def healthz():
+def healthz(): 
     connection = get_db_connection()
     posts = connection.execute('SELECT * FROM posts').fetchall()
     connection.close()
