@@ -1,9 +1,10 @@
+import os
+import sys
 import sqlite3
 import logging
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
-
 
 
 # Function to get a database connection.
@@ -24,6 +25,7 @@ def get_post(post_id):
     post = connection.execute('SELECT * FROM posts WHERE id = ?',   
                         (post_id,)).fetchone()
     connection.close()
+    app.logger.info("Article retrived")
     return post
 
 # Define the Flask application
@@ -33,7 +35,7 @@ app.config['SECRET_KEY'] = 'your secret key'
  #Define the /metrics endpoint 
 # Return a 200 HTTP JSON response
 # Return the updated amount of posts (“post_count”) and number of connections made with the database (“db_connection_count”)
-# len() returns the lenght of a string 
+# len() returns the length of a string 
 
 @app.route('/metrics')
 def metrics():
@@ -80,14 +82,13 @@ def post(post_id):
       app.logger.info('Article does not exist')
       return render_template('404.html'), 404
     else:
-      app.logger.info('Article request successfull')
       return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
 def about():
     ## log line
-    app.logger.info('About Us request successfull')
+    app.logger.info('About us request successfull')
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -108,13 +109,28 @@ def create():
 
             return redirect(url_for('index'))
             
-    app.logger.info('Article created successfull')
+    app.logger.info("Article created")
     return render_template('create.html')
 
 # start the application on port 3111
 if __name__ == "__main__":
 
     ## stream logs to app.log file
-    logging.basicConfig(filename='app.log',level=logging.DEBUG)
 
-    app.run(host='0.0.0.0', port='3111')
+    loglevel = os.getenv("LOGLEVEL", "DEBUG").upper()
+    loglevel = (
+      getattr(logging, loglevel)
+      if loglevel in ["CRITICAL", "DEBUG", "ERROR", "INFO", "WARNING",]
+      else logging.DEBUG
+  )
+
+  # Set logger to handle STDOUT and STDERR
+    stdout_handler = logging.StreamHandler(sys.stdout) # STDOUT handler
+    stderr_handler = logging.StreamHandler(sys.stderr) # STDERR handler
+    handlers = [stderr_handler, stdout_handler]
+
+  # format output
+    format_output = ('%(asctime)s - %(name)s - %(message)s') # formatting output here
+    logging.basicConfig(format=format_output, level=loglevel, handlers=handlers)
+
+app.run(host='0.0.0.0', port='3111')
