@@ -109,7 +109,7 @@ def create():
 
             return redirect(url_for('index'))
             
-    app.logger.info("Article created")
+    app.logger.info("%s Article created", title)
     return render_template('create.html')
 
 # start the application on port 3111
