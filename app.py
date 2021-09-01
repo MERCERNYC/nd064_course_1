@@ -25,7 +25,7 @@ def get_post(post_id):
     post = connection.execute('SELECT * FROM posts WHERE id = ?',   
                         (post_id,)).fetchone()
     connection.close()
-    app.logger.info("Article retrived")
+    app.logger.info('%s Article retrieved, post')
     return post
 
 # Define the Flask application
@@ -78,6 +78,7 @@ def index():
 @app.route('/<int:post_id>')
 def post(post_id):
     post = get_post(post_id)
+
     if post is None:
       app.logger.info('Article does not exist')
       return render_template('404.html'), 404
@@ -97,6 +98,7 @@ def create():
     if request.method == 'POST':
         title = request.form['title']
         content = request.form['content']
+        app.logger.info("%s Article created", title)
 
         if not title:
             flash('Title is required!')
@@ -109,7 +111,6 @@ def create():
 
             return redirect(url_for('index'))
             
-    app.logger.info("%s Article created", title)
     return render_template('create.html')
 
 # start the application on port 3111
