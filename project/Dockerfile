@@ -1,6 +1,6 @@
 
-#python base image in version 2.7
-FROM python:2.7
+#python base image in version 2.7. Changed to version 3 to run docker
+FROM python:3
 
 LABEL maintainer="Juliana Fogg"
 
