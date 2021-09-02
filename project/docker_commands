@@ -7,4 +7,10 @@
 ## Docker commands used to get the application logs
 # docker logs techtrends
 
+# tag the image
+docker tag techtrends julianafogg/techtrends:v1.0.0
+
+# push the image
+docker push techtrends julianafogg/techtrends:v1.0.0
+
 ## Logs from the container running the TechTrends application

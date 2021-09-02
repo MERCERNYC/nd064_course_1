@@ -19,6 +19,6 @@ ENV PORT 3111
 EXPOSE ${PORT}
 
 # command to run on container start
-CMD [ "python", "app.py" ]
+CMD [ "python3", "app.py" ]
 
 

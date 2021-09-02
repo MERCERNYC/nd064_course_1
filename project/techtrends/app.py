@@ -25,7 +25,6 @@ def get_post(post_id):
     post = connection.execute('SELECT * FROM posts WHERE id = ?',   
                         (post_id,)).fetchone()
     connection.close()
-    app.logger.info('%s Article retrieved, post')
     return post
 
 # Define the Flask application
@@ -33,9 +32,6 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
 
  #Define the /metrics endpoint 
-# Return a 200 HTTP JSON response
-# Return the updated amount of posts (“post_count”) and number of connections made with the database (“db_connection_count”)
-# len() returns the length of a string 
 
 @app.route('/metrics')
 def metrics():
@@ -50,7 +46,8 @@ def metrics():
     return response
     
 
-# Return a 200 HTTP JSON response with a message “OK - healthy”
+# Return a 200 HTTP JSON response with a message 
+
 @app.route('/healthz')
 def healthz(): 
     connection = get_db_connection()
@@ -83,6 +80,7 @@ def post(post_id):
       app.logger.info('Article does not exist')
       return render_template('404.html'), 404
     else:
+      app.logger.info('%s Article retrieved', post["title"])
       return render_template('post.html', post=post)
 
 # Define the About Us page
@@ -134,4 +132,4 @@ if __name__ == "__main__":
     format_output = ('%(asctime)s - %(name)s - %(message)s') # formatting output here
     logging.basicConfig(format=format_output, level=loglevel, handlers=handlers)
 
-app.run(host='0.0.0.0', port='3111')
+    app.run(host='0.0.0.0', port='3111')
