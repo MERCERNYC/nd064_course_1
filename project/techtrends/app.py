@@ -130,7 +130,6 @@ if __name__ == "__main__":
     stderr_handler = logging.StreamHandler(sys.stderr) # STDERR handler
     handlers = [stderr_handler, stdout_handler]
 
-
   # format output
     format_output = ('%(asctime)s - %(name)s - %(message)s') # formatting output here
     logging.basicConfig(format=format_output, level=loglevel, handlers=handlers)
