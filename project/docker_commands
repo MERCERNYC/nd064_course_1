@@ -6,6 +6,7 @@
 
 ## Docker commands used to get the application logs
 # docker logs techtrends
+<<<<<<< HEAD
 
 # tag the image
 docker tag techtrends julianafogg/techtrends:v1.0.0
@@ -56,3 +57,8 @@ docker logs -f $(docker ps | grep techtrends | tr " " "\n" | tail -1)
 2021-09-03 12:08:54,300 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:54] "GET /healthyz HTTP/1.1" 404 -
 2021-09-03 12:08:58,330 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:58] "GET /healthz HTTP/1.1" 200 -
 2021-09-03 12:08:58,330 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:58] "GET /healthz HTTP/1.1" 200 -
+=======
+
+## Logs from the container running the TechTrends application
+
+>>>>>>> 54421a22c0df25148d019b0b732a49386b163326

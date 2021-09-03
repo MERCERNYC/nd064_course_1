@@ -6,9 +6,9 @@ name: TechTrends - Package with Docker
 # events but only for the master branch
 on:
   push:
-    branches: [ udacity_scholarship ]
+    branches: [ main ]
   pull_request:
-    branches: [ udacity_scholarship ]
+    branches: [ main ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
