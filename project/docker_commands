@@ -11,6 +11,48 @@
 docker tag techtrends julianafogg/techtrends:v1.0.0
 
 # push the image
-docker push techtrends julianafogg/techtrends:v1.0.0
+docker push julianafogg/techtrends:v1.0.0
 
 ## Logs from the container running the TechTrends application
+docker logs -f $(docker ps | grep techtrends | tr " " "\n" | tail -1)
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+2021-09-03 11:55:24,624 - werkzeug -  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+2021-09-03 11:55:24,624 - werkzeug -  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+2021-09-03 12:08:22,859 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:22] "GET / HTTP/1.1" 200 -
+2021-09-03 12:08:22,859 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:22] "GET / HTTP/1.1" 200 -
+2021-09-03 12:08:23,041 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:23] "GET /static/css/main.css HTTP/1.1" 200 -
+2021-09-03 12:08:23,041 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:23] "GET /static/css/main.css HTTP/1.1" 200 -
+2021-09-03 12:08:24,706 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:24] "GET /favicon.ico HTTP/1.1" 404 -
+2021-09-03 12:08:24,706 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:24] "GET /favicon.ico HTTP/1.1" 404 -
+2021-09-03 12:08:25,154 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:25] "GET / HTTP/1.1" 200 -
+2021-09-03 12:08:25,154 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:25] "GET / HTTP/1.1" 200 -
+2021-09-03 12:08:26,276 - app - 2020 CNCF Annual Report Article retrieved
+2021-09-03 12:08:26,276 - app - 2020 CNCF Annual Report Article retrieved
+2021-09-03 12:08:26,285 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:26] "GET /1 HTTP/1.1" 200 -
+2021-09-03 12:08:26,285 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:26] "GET /1 HTTP/1.1" 200 -
+2021-09-03 12:08:27,996 - app - About us request successfull
+2021-09-03 12:08:28,000 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:28] "GET /about HTTP/1.1" 200 -
+2021-09-03 12:08:27,996 - app - About us request successfull
+2021-09-03 12:08:28,000 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:28] "GET /about HTTP/1.1" 200 -
+2021-09-03 12:08:29,364 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:29] "GET /create HTTP/1.1" 200 -
+2021-09-03 12:08:29,364 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:29] "GET /create HTTP/1.1" 200 -
+2021-09-03 12:08:33,525 - app - Software engineer Article created
+2021-09-03 12:08:33,525 - app - Software engineer Article created
+2021-09-03 12:08:33,533 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:33] "POST /create HTTP/1.1" 302 -
+2021-09-03 12:08:33,533 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:33] "POST /create HTTP/1.1" 302 -
+2021-09-03 12:08:33,544 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:33] "GET / HTTP/1.1" 200 -
+2021-09-03 12:08:33,544 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:33] "GET / HTTP/1.1" 200 -
+2021-09-03 12:08:38,161 - app - Article does not exist
+2021-09-03 12:08:38,161 - app - Article does not exist
+2021-09-03 12:08:38,167 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:38] "GET /404 HTTP/1.1" 404 -
+2021-09-03 12:08:38,167 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:38] "GET /404 HTTP/1.1" 404 -
+2021-09-03 12:08:44,526 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:44] "GET /metrics HTTP/1.1" 200 -
+2021-09-03 12:08:44,526 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:44] "GET /metrics HTTP/1.1" 200 -
+2021-09-03 12:08:54,300 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:54] "GET /healthyz HTTP/1.1" 404 -
+2021-09-03 12:08:54,300 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:54] "GET /healthyz HTTP/1.1" 404 -
+2021-09-03 12:08:58,330 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:58] "GET /healthz HTTP/1.1" 200 -
+2021-09-03 12:08:58,330 - werkzeug - 172.17.0.1 - - [03/Sep/2021 12:08:58] "GET /healthz HTTP/1.1" 200 -
