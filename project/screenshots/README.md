@@ -13,6 +13,7 @@ Place any project screenshots in this directory.
 <img width="1234" alt="ci-dockerhub" src="https://user-images.githubusercontent.com/23249535/132074105-6149504d-ae36-44dc-bba3-706b87e1678f.png">
 
 ## k8s-nodes
-<img width="451" alt="k8s-nodes" src="https://user-images.githubusercontent.com/23249535/132075278-8b070a18-3a7f-4d79-833f-fd5c8580a463.png">
+<img width="460" alt="k8s-nodes" src="https://user-images.githubusercontent.com/23249535/132571646-460d6186-e4a5-4114-a40e-2102dc12910f.png">
+
 
 
