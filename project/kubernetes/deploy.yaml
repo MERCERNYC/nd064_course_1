@@ -1,47 +1,47 @@
+--- 
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  labels:
+metadata: 
+  labels: 
     app: techtrends
   name: techtrends
   namespace: sandbox
-spec:
+spec: 
   replicas: 1
-  selector:
-    matchLabels:
+  selector: 
+    matchLabels: 
       app: techtrends
-  strategy:
-    rollingUpdate:
+  strategy: 
+    rollingUpdate: 
       maxSurge: 25%
       maxUnavailable: 25%
     type: RollingUpdate
-  template:
-    metadata:
-      labels:
+  template: 
+    metadata: 
+      labels: 
         app: techtrends
-    spec:
-      containers:
-      - image: 'julianafogg/techtrends:latest'
-        imagePullPolicy: IfNotPresent
-        name: techtrends
-        ports:
-        - containerPort: 3111
-          protocol: TCP 
-        livenessProbe:
-           httpGet:
-             path: /
-             port: 3111
-        readinessProbe:
-           httpGet:
-             path: /
-             port: 3111
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-
-
-
+    spec: 
+      containers: 
+        - 
+          image: "julianafogg/techtrends:latest"
+          imagePullPolicy: IfNotPresent
+          livenessProbe: 
+            httpGet: 
+              path: /
+              port: 3111
+          name: techtrends
+          ports: 
+            - 
+              containerPort: 3111
+              protocol: TCP
+          readinessProbe: 
+            httpGet: 
+              path: /
+              port: 3111
+          resources: 
+            limits: 
+              cpu: 500m
+              memory: 128Mi
+            requests: 
+              cpu: 250m
+              memory: 64Mi
