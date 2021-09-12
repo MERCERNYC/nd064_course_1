@@ -12,6 +12,6 @@ spec:
     helm:
       valueFiles:
       - values-prod.yaml
-    path: project/helm
+    path: product/helm
     repoURL: https://github.com/MERCERNYC/nd064_course_1
     targetRevision: HEAD
