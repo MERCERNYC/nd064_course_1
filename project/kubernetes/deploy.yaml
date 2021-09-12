@@ -23,7 +23,7 @@ spec:
     spec: 
     containers: 
       - 
-        image: julianafogg/techtrends:latest
+        image: techtrends:latest
         imagePullPolicy: IfNotPresent
         livenessProbe: 
         httpGet: 
