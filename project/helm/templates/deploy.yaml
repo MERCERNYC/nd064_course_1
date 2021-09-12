@@ -21,7 +21,7 @@ spec:
         app: techtrends
     spec:
       containers:
-        - image: julianafogg/techtrends
+        - image: techtrends
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           name: techtrends
           ports:
