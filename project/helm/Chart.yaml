@@ -2,9 +2,7 @@ apiVersion: v1
 name: techtrends
 description: Helm Chart Techtrends Project 
 keywords: 
-  - techtrends
+ - techtrends
 version: 1.0.0
 maintainers:
-  - name: julianafogg
- 
-  
+ - name: julianafogg

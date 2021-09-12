@@ -1,6 +1,6 @@
 namespace:
   name: prod 
- 
+
 service:
   port: 7111
   type: ClusterIP
