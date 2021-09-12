@@ -1,3 +1,4 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -11,7 +12,7 @@ spec:
   source:
     helm:
       valueFiles:
-      - values-prod.yaml
+        - values-prod.yaml
     path: project/helm
     repoURL: https://github.com/MERCERNYC/nd064_course_1.git
     targetRevision: HEAD
