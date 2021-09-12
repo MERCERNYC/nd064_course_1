@@ -13,5 +13,5 @@ spec:
       valueFiles:
       - values-staging.yaml
     path: project/helm
-    repoURL: https://github.com/MERCERNYC/nd064_course_1
+    repoURL: https://github.com/MERCERNYC/nd064_course_1.git
     targetRevision: HEAD
