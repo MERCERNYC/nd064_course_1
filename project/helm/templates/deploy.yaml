@@ -27,18 +27,18 @@ spec:
         ports:
         - containerPort: 3111
           protocol: TCP 
-          livenessProbe:
-            httpGet:
+        livenessProbe:
+          httpGet:
             path: /
             port: 3111
-          readinessProbe:
-            httpGet:
+        readinessProbe:
+          httpGet:
             path: /
             port: 3111
-          resources:
-            requests:
-              memory: 64Mi
-              cpu: 250m
-            limits:
-              memory: 128Mi
-              cpu: 500m
+        resources:
+          requests:
+            memory: 64Mi
+            cpu: 250m
+          limits:
+            memory: 128Mi
+            cpu: 500m
